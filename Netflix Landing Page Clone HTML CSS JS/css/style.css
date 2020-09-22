@@ -1,0 +1,182 @@
+:root{ /*Properties use in several locations*/
+  --primary-color:#e50914;
+  --dark-color:#141414;
+}
+
+*{ /*Reset*/
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+/* ====================================
+   GENERAL PROPERTIES
+===================================== */
+body{ 
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing:antialiased;
+  background: #000;
+  color:#999;
+}
+
+ul{
+  list-style:none;
+}
+
+h1, h2, h3, h4{
+  color:#fff;
+}
+
+a{
+  color:#fff;
+  text-decoration: none;
+}
+
+p{
+  margin:0.5rem 0;
+}
+
+img{
+  width:100%;
+}
+
+/* ====================================
+   SHOWCASE
+===================================== */
+.showcase{
+  width: 100%;
+  height: 93vh; /*leave space in the end of the section*/
+  position:relative; /*To position some elements absolute*/
+  background: url('https://i.ibb.co/vXqDmnh/background.jpg') no-repeat center center/cover;/*write 2 center for x axis and y axis */
+}
+
+.showcase::after{
+  content: "";
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0,0,0,0.6); /*rgba use for transparent*/
+  box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;/*effect darcker the corners, px for how thick the shadow is,
+  first one top and bottom, second one right and leff, notice the negative value*/
+}
+
+.showcase-top{
+  position: relative;
+  z-index: 2;
+  height: 90px;
+}
+
+.showcase-top img{
+  width: 170px;
+  position: absolute; /*inside of its closets parent element with a relative position*/
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+
+.showcase-top a{ /*put link in the middle of the logo*/
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+.showcase-content{
+  position: relative;
+  z-index: 2;
+  margin: auto;
+  display: flex; /*align horizontaly*/
+  flex-direction: column; /*correct the flex to align vertically*/
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 9rem;
+}
+
+.showcase-content h1{
+  font-weight: 700;
+  font-size: 5.2rem;
+  line-height: 1.1;
+  margin: 0 0 2rem;
+}
+
+.showcase-content p{
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 1.25;
+  margin: 0 0 2rem;
+}
+
+/* ====================================
+   TABS
+===================================== */
+ 
+.tabs{
+  background:var(--dark-color);
+  padding-top: 1rem;
+  border-bottom: 3px solid #3d3d3d;
+}
+
+.tabs .container{
+  display: grid; /*grind applies on child so use container class not tab class*/
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* ====================================
+   UTILITY CLASSES
+===================================== */
+.container{
+  max-width: 70%;
+  margin: auto; /*move to the middle*/
+  overflow: hidden; /*everything stay within the container*/
+  padding: 0 2rem;
+}
+
+.btn{
+  display: inline-block;
+  background: var(--primary-color);/*use custom property*/
+  color:#fff;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  outline: none;
+  box-shadow: 0 1px rgba(0, 0, 0, 0.45);
+  border-radius: 2px;
+}
+
+.btn:hover{
+  opacity: 0.9;
+}
+
+.btn-rounded{
+  border-radius: 5px;
+}
+
+.btn-xl{
+  font-size: 2rem;
+  padding: 1.5rem 2.1rem;
+  text-transform: uppercase;
+}
+
+.btn-lg{
+  font-size: 1rem;
+  padding: 0.8rem 1.3rem;
+  text-transform: uppercase;
+}
+
+
+
+
+
