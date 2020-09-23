@@ -47,7 +47,7 @@ img{
   width: 100%;
   height: 93vh; /*leave space in the end of the section*/
   position:relative; /*To position some elements absolute*/
-  background: url('https://i.ibb.co/vXqDmnh/background.jpg') no-repeat center center/cover;/*write 2 center for x axis and y axis */
+  background: url('https://i.ibb.co/vXqDmnh/background.jpg') no-repeat center center/cover;/*OJO write 2 center for x axis and y axis */
 }
 
 .showcase::after{
@@ -59,7 +59,7 @@ img{
   height: 100%;
   z-index: 1;
   background: rgba(0,0,0,0.6); /*rgba use for transparent*/
-  box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;/*effect darcker the corners, px for how thick the shadow is,
+  box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;/* OJO effect darcker the corners, px for how thick the shadow is,
   first one top and bottom, second one right and leff, notice the negative value*/
 }
 
@@ -77,10 +77,10 @@ img{
   transform: translate(-50%, -50%);
 }
 
-.showcase-top a{ /*put link in the middle of the logo*/
+.showcase-top a{ /*put botton in the middle of the showcase top*/
   position: absolute;
   top: 50%;
-  right: 0;
+  right: 0; 
   transform: translate(-50%, -50%);
 }
 

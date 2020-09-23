@@ -1,0 +1,68 @@
+body{
+  margin:0;
+  padding:0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5em;
+}
+
+#site_wrap{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 
+  1fr /*para hacer responsive dejar los lados con francion para que se adapte*/
+  repeat(4,minmax(0,272px))     /*Para hacer las columns de XD, se examina cada item y se divide entre las columnsa que ocupa*/
+  1fr
+  ;
+  grid-gap: 5px;
+  grid-template-rows: /*ir midiendo cada componente para determinar altura*/
+  104px
+  215px
+  373px
+  373px
+  1fr /*Footer con lo que sobra para que sea responsive*/
+  ;
+grid-template-areas: 
+  "header header header header header header"
+  "featured_header featured_header featured_header featured_header featured_header featured_header"
+  ". featured_main featured_main featured_main  featured_profile ."/*blanck spaces use */
+  ". content content content content ."
+  " footer footer footer footer footer footer"
+  ;
+
+}
+
+/*use temporary, erase when asign colors
+#site_wrap > div{ add color to each column to preview the result
+  background-color: teal ;
+}*/
+
+.header{
+  background-color: green;
+  grid-area:header;
+}
+
+.featured_header{
+  background-color: purple;
+  grid-area:featured_header;
+}
+
+.featured_main{
+  background-color:orange;
+  grid-area:featured_main;
+}
+
+.featured_profile{
+  background-color:blue;
+  grid-area:featured_profile;
+}
+
+.content{
+  background-color: lightblue;
+  grid-area:content;
+}
+
+.footer{
+  background-color: gray;
+  grid-area:footer;
+}
+
