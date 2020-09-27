@@ -3,9 +3,13 @@ body{
   padding:0;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5em;
+  
+  
 }
 
 #site_wrap{
+  background-image: url(https://picsum.photos/1920/1900.jpg);
+  background-size: cover;
   height: 100vh;
   display: grid;
   grid-template-columns: 
@@ -17,8 +21,8 @@ body{
   grid-template-rows: /*ir midiendo cada componente para determinar altura*/
   104px
   215px
-  373px
-  373px
+  min-content /*From specific size to the size of the content, if content grows the div adapt*/
+  min-content
   1fr /*Footer con lo que sobra para que sea responsive*/
   ;
 grid-template-areas: 
@@ -37,12 +41,12 @@ grid-template-areas:
 }*/
 
 .header{ /*child of grip, but can be father of flexbox*/
-  background-color: white;
-  grid-area:header;
+  background-color: rgba(0,0,0,.25);
   display: flex;
   align-items: center;
   justify-content: space-between; /*put elements to the right, because is distributing space with logo*/
-  }
+  grid-area:header;
+}
 
 .header .logo{
   width: 85px;
@@ -63,6 +67,7 @@ grid-template-areas:
   margin: 0 8px;/*space between bottons*/
   text-transform: uppercase;
   font-weight: bold;
+  display: inline-block; /*for responsive to have margin and padding*/
 }
 
 .header .nav a:hover, .header .nav .active{
@@ -72,27 +77,61 @@ grid-template-areas:
 
 
 .featured_header{
-  background-color: purple;
+  background-image:url(https://picsum.photos/1200/300.jpg);
+  background-size: cover; /*always with backgroun image, for resizing*/
   grid-area:featured_header;
 }
 
 .featured_main{
-  background-color:orange;
+ 
+  background-color: transparent;
   grid-area:featured_main;
 }
 
+.featured_main h1{
+  color: #707070;
+}
+
+.featured_main p{
+  color: #707070;
+}
+
+.btn{
+  text-decoration: none;
+  border: 2px solid #5A8C87;
+  background-color:  #5A8C87;
+  border-radius: 50em; /*best way to round borders,  round is better*/
+  color: white ;
+  padding: 15px 30px;
+  margin: 0 8px;/*space between bottons*/
+  text-transform: uppercase;
+  font-weight: bold;
+  float: right;
+}
+
 .featured_profile{
-  background-color:blue;
+  background-color: transparent;
+  padding: 2em 1em;
   grid-area:featured_profile;
 }
 
 .content{
-  background-color: lightblue;
+  background-color: transparent;
   grid-area:content;
-}
+  display: flex;
+  }
+
+  .content img{
+    margin: 0 5px 2em 5px;
+  }
+
+
 
 .footer{
   background-color: gray;
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 2em;
   grid-area:footer;
 }
 
@@ -112,11 +151,35 @@ grid-template-areas:
     "content content content content content content"
     " footer footer footer footer footer footer"
     ;
+
+    grid-template-rows: /*ir midiendo cada componente para determinar altura*/
+    min-content
+    215px
+    min-content /*From specific size to the size of the content, if content grows the div adapt*/
+    min-content
+    1fr /*Footer con lo que sobra para que sea responsive*/
+    ;
     }
 
   .featured_profile{ /* desapear a section from mobile */
     display:none;
   }  
+
+  .header .nav{ /*from vertival nav to horizontal*/
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header .nav a{
+    margin: 0.5em;
+  }
+ 
+  .content{
+    flex-direction: column;
+    }
+  
 }
 
 /*https://www.youtube.com/watch?v=wAUQSuiflbE  */
