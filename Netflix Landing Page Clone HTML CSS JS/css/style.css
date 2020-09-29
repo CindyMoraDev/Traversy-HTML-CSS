@@ -47,7 +47,7 @@ img{
   width: 100%;
   height: 93vh; /*leave space in the end of the section*/
   position:relative; /*To position some elements absolute*/
-  background: url('https://i.ibb.co/vXqDmnh/background.jpg') no-repeat center center/cover;/*OJO write 2 center for x axis and y axis */
+  background: url('https://i.ibb.co/vXqDmnh/background.jpg') no-repeat center center/cover;/*OJO write 2 center for x axis and y axis, make the img responsive */
 }
 
 .showcase::after{
@@ -126,21 +126,79 @@ img{
   display: grid; /*grind applies on child so use container class not tab class*/
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
-  align-items: center;
+  align-items: center; /*these three are use a lot with flexbox and grid*/
   justify-content: center;
   text-align: center;
 }
 
+.tabs p{
+  font-size: 1.2rem;
+  padding-top: 0.5rem ;
+}
+
+.tabs .container > div{ /*space in each tab*/
+  padding: 1.5rem 0;
+}
+
+.tabs .container > div:hover{
+  color:#fff;
+  cursor:pointer; 
+}
+
+.tab-border{
+  border-bottom: var(--primary-color) 4px solid;
+}
+
+/* ============================================================================================================
+   TAB CONTENT 1
+============================================================================================================= */
+.tab-content{
+  padding: 3rem 0;
+  background: #000;
+  color: white;
+}
+
+ #tab-1-content .tab-1-content-inner{
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-gap: 2rem;
+   align-items: center;
+   justify-content: center;
+ }
+
+
+
 /* ====================================
    UTILITY CLASSES
 ===================================== */
+/*Container*/
 .container{
-  max-width: 70%;
+  max-width: 70%; /*responsive*/
   margin: auto; /*move to the middle*/
   overflow: hidden; /*everything stay within the container*/
   padding: 0 2rem;
 }
 
+/*Text Styles*/
+.text-xl{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.text-lg{
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.text-dark{
+  color: #999 ; 
+}
+
+/*Buttons*/
 .btn{
   display: inline-block;
   background: var(--primary-color);/*use custom property*/
