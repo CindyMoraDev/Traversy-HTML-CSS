@@ -193,11 +193,27 @@ img{
 .table{
   width:100%;
   margin-top:2rem;
+  border-collapse: collapse; /*erase the space between columns*/
+  border-spacing: 0;
 }
 
 .table thead th{
   text-transform: uppercase;
   padding: 0.8rem;
+}
+
+.table tbody tr td{
+  color: #999;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+}
+
+.table tbody tr td:first-child{ /*Fist column align text to the left*/
+  text-align: left;
+}
+
+.table tbody tr:nth-child(odd){ /*assign diferent color every other row*/
+  background: #222;
 }
 
 /* ====================================
